@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, Text, useColorMode } from "@chakra-ui/react";
 import { Environment, OrbitControls } from "@react-three/drei";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -18,8 +18,18 @@ const navLinks = [
 ];
 
 export default function Layout({ children }: IProps) {
+  const { colorMode } = useColorMode();
+
   return (
-    <Center position="relative" p={10} bg="#0C0C0C" w="100vw" h="100vh">
+    <Center
+      position="relative"
+      p={10}
+      bg="#0C0C0C"
+      w="100vw"
+      maxH="100vh"
+      overflowY="hidden"
+      h="100vh"
+    >
       <Flex
         zIndex={100}
         justifyContent="space-between"
@@ -34,11 +44,16 @@ export default function Layout({ children }: IProps) {
           zIndex={0}
           pointerEvents="none"
           opacity={0.2}
+          // filter="invert(1)"
           w="100vw"
           h="100vh"
           position="absolute"
         >
-          <Canvas dpr={[1, 2]} camera={{ position: [2, 7, 2], fov: 60 }}>
+          <Canvas
+            style={{ pointerEvents: "none" }}
+            dpr={[1, 2]}
+            camera={{ position: [2, 7, 2], fov: 60 }}
+          >
             <Suspense fallback={null}>
               <CustomScene />
               <Environment preset="studio" />

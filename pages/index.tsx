@@ -1,9 +1,5 @@
-import { Center, Text, Box } from "@chakra-ui/react";
-import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Center, Text } from "@chakra-ui/react";
 import FadeInOut from "../src/components/animations/FadeInOut";
-import CustomScene from "../src/components/Models/Scene";
 
 export default function Home() {
   return (

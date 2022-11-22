@@ -20,7 +20,7 @@ const FadeInOut = ({ children }: IProps) => {
     // intro animation will play immediately
     gsap.to(el.current, {
       opacity: 1,
-      duration: 0.5,
+      duration: 1.5,
       x: 0,
     });
 
@@ -28,7 +28,7 @@ const FadeInOut = ({ children }: IProps) => {
     timeline.add(
       gsap.to(el.current, {
         opacity: 0,
-        duration: 0.2,
+        duration: 1.5,
         x: 1000,
       }),
       0
