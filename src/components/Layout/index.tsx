@@ -1,5 +1,10 @@
-import { Box, Center, Flex, Text, useColorMode } from "@chakra-ui/react";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { Box, Center, Flex, Icon, Text, useColorMode } from "@chakra-ui/react";
+import {
+  Environment,
+  Html,
+  OrbitControls,
+  useProgress,
+} from "@react-three/drei";
 import Link from "next/link";
 import { Suspense } from "react";
 import { Canvas } from "react-three-fiber";
@@ -16,6 +21,18 @@ const navLinks = [
   { name: "Infos", url: "/infos" },
   { name: "Contact", url: "/contact" },
 ];
+
+function Loader() {
+  const { progress } = useProgress();
+  console.log("PROGRESS", progress);
+  return (
+    <Html center>
+      <Text color="white" fontSize={60}>
+        {progress} % loaded
+      </Text>
+    </Html>
+  );
+}
 
 export default function Layout({ children }: IProps) {
   const { colorMode } = useColorMode();
@@ -37,6 +54,7 @@ export default function Layout({ children }: IProps) {
         border="1px solid #8D8D8D"
         w="full"
         h="full"
+        position="relative"
       >
         <Box
           top={0}
@@ -54,11 +72,11 @@ export default function Layout({ children }: IProps) {
             dpr={[1, 2]}
             camera={{ position: [2, 7, 2], fov: 60 }}
           >
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
               <CustomScene />
-              <Environment preset="studio" />
-              <OrbitControls autoRotate />
             </Suspense>
+            <Environment preset="studio" />
+            <OrbitControls autoRotate />
           </Canvas>
         </Box>
 
@@ -82,6 +100,7 @@ export default function Layout({ children }: IProps) {
             ))}
           </Flex>
         </Flex>
+
         {children}
       </Flex>
     </Center>

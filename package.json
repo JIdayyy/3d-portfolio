@@ -30,6 +30,7 @@
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
     "react-three": "^0.9.7",
     "react-three-fiber": "^6.0.13",
     "three": "^0.146.0",
