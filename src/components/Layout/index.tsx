@@ -24,7 +24,7 @@ const navLinks = [
 
 function Loader() {
   const { progress } = useProgress();
-  console.log("PROGRESS", progress);
+
   return (
     <Html center>
       <Text color="white" fontSize={60}>
@@ -35,14 +35,12 @@ function Loader() {
 }
 
 export default function Layout({ children }: IProps) {
-  const { colorMode } = useColorMode();
-
   return (
     <Center
       position="relative"
       p={10}
       bg="#0C0C0C"
-      w="100vw"
+      maxW="100vw"
       maxH="100vh"
       overflowY="hidden"
       h="100vh"
@@ -54,7 +52,6 @@ export default function Layout({ children }: IProps) {
         border="1px solid #8D8D8D"
         w="full"
         h="full"
-        position="relative"
       >
         <Box
           top={0}
@@ -68,7 +65,11 @@ export default function Layout({ children }: IProps) {
           position="absolute"
         >
           <Canvas
-            style={{ pointerEvents: "none" }}
+            style={{
+              pointerEvents: "none",
+              maxWidth: "100vw",
+              maxHeight: "100vh",
+            }}
             dpr={[1, 2]}
             camera={{ position: [2, 7, 2], fov: 60 }}
           >

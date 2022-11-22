@@ -12,7 +12,6 @@ import "@fontsource/akshar/600.css";
 import "@fontsource/akshar/700.css";
 import CustomCursor from "custom-cursor-react";
 import "custom-cursor-react/dist/index.css";
-
 import theme from "../src/definitions/chakra/theme";
 import { TransitionProvider } from "../src/context/Transition";
 import TransitionLayout from "../src/components/Layout/TransitionLayout";
