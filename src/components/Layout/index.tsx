@@ -24,7 +24,7 @@ const navLinks = [
 
 function Loader() {
   const { progress } = useProgress();
-  console.log("PROGRESS", progress);
+
   return (
     <Html center>
       <Text color="white" fontSize={60}>
@@ -35,14 +35,12 @@ function Loader() {
 }
 
 export default function Layout({ children }: IProps) {
-  const { colorMode } = useColorMode();
-
   return (
     <Center
       position="relative"
       p={10}
       bg="#0C0C0C"
-      w="100vw"
+      maxW="100vw"
       maxH="100vh"
       overflowY="hidden"
       h="100vh"

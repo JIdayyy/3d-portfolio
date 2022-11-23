@@ -45,7 +45,8 @@ export default function Projects() {
         <Flex
           h="full"
           w="full"
-          overflowY="scroll"
+          overflowY="auto"
+          overflowX="hidden"
           position="absolute"
           direction="column"
           alignItems="end"

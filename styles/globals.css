@@ -7,6 +7,14 @@ body {
   cursor: none;
 }
 
+body {
+  overflow: hidden;
+}
+
+html {
+  overflow: hidden;
+}
+
 a {
   color: inherit;
   text-decoration: none;
