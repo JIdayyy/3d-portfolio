@@ -7,12 +7,14 @@ export default function Home() {
   return (
     <FadeInOut>
       <Center
+        pointerEvents="none"
         bg="transparent"
         justifyContent="flex-end"
         alignItems="flex-end"
         w="full"
         h="full"
         flexDir="column"
+        zIndex={0}
       >
         <Text w="300px">
           Born in 1991 in Biarritz, France. <br />I believe web development can

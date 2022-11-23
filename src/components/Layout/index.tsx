@@ -51,31 +51,25 @@ export default function Layout({ children }: IProps) {
         zIndex={100}
         justifyContent="space-between"
         p={10}
-        border="1px solid #8D8D8D"
+        border="1px solid #FFFFFF"
         w="full"
         h="full"
-        position="relative"
       >
         <Box
           top={0}
           left={0}
           zIndex={0}
-          pointerEvents="none"
-          opacity={0.2}
+          opacity={0.6}
           // filter="invert(1)"
           w="100vw"
           h="100vh"
           position="absolute"
         >
-          <Canvas
-            style={{ pointerEvents: "none" }}
-            dpr={[1, 2]}
-            camera={{ position: [2, 7, 2], fov: 60 }}
-          >
+          <Canvas style={{ position: "absolute", zIndex: 0 }} dpr={[1, 2]}>
             <Suspense fallback={<Loader />}>
               <CustomScene />
             </Suspense>
-            <Environment preset="studio" />
+            {/* <Environment preset="studio" /> */}
             <OrbitControls autoRotate />
           </Canvas>
         </Box>

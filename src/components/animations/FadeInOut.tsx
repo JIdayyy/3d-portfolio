@@ -37,7 +37,7 @@ const FadeInOut = ({ children }: IProps) => {
 
   // set initial opacity to 0 to avoid FOUC for SSR
   return (
-    <Box w="full" h="full" ref={el} sx={{ opacity: 0 }}>
+    <Box pointerEvents="none" w="full" h="full" ref={el} sx={{ opacity: 0 }}>
       {children}
     </Box>
   );
